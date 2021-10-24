@@ -15,6 +15,10 @@ class Rectangle(Figure):
     def get_perimeter(self):
         return (self.a + self.b) * 2
 
+    @property
+    def add_area_other_figures(self):
+        pass
+
 
 Rectangle1 = Rectangle(12, 13)
 

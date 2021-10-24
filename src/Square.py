@@ -14,6 +14,10 @@ class Square(Figure):
     def get_perimeter(self):
         return self.a * 4
 
+    @property
+    def add_area_other_figures(self):
+        pass
+
 
 Square1 = Square(12)
 

@@ -15,8 +15,14 @@ class Ciacle(Figure):
     def get_perimeter(self):
         return 2 * 3.14 * self.r
 
+    @property
+    def add_area_other_figures(self):
+        pass
+
 
 Ciacle1 = Ciacle(12)
 
+
 print(Ciacle1.get_area)
 print(Ciacle1.get_perimeter)
+print(Ciacle1.add_area_other_figures)

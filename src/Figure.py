@@ -11,6 +11,11 @@ class Figure(ABC):
     def get_perimeter(self):
         pass
 
+    @abstractmethod
+    def add_area_other_figures(self):
+        pass
+
+
 
 
 
