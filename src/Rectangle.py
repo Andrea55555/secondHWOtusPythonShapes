@@ -16,7 +16,7 @@ class Rectangle(Figure):
         return (self.a + self.b) * 2
 
     @property
-    def add_area_other_figures(self):
+    def add_area(self):
         pass
 
 

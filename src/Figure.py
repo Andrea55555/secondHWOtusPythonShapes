@@ -12,7 +12,7 @@ class Figure(ABC):
         pass
 
     @abstractmethod
-    def add_area_other_figures(self):
+    def add_area(self, figure):
         pass
 
 

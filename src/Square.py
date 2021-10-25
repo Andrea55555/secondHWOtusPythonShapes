@@ -15,7 +15,7 @@ class Square(Figure):
         return self.a * 4
 
     @property
-    def add_area_other_figures(self):
+    def add_area(self):
         pass
 
 
