@@ -2,6 +2,9 @@ from src.Figure import Figure
 
 
 class Rectangle(Figure):
+    area = 0
+    perimeter = 0
+    name = 'rectangle'
 
     def __init__(self, a, b):
         self.a = a
@@ -9,18 +12,14 @@ class Rectangle(Figure):
 
     @property
     def get_area(self):
-        return self.a * self.b
+        self.area = self.a * self.b
+        return self.area
 
     @property
     def get_perimeter(self):
-        return (self.a + self.b) * 2
+        self.perimeter = (self.a + self.b) * 2
+        return self.perimeter
 
-    @property
-    def add_area(self):
-        pass
-
-
-Rectangle1 = Rectangle(12, 13)
-
-print(Rectangle1.get_area)
-print(Rectangle1.get_perimeter)
+    def add_area(self, figure):
+        self.area = self.area + figure.get_area()
+        return self.area

@@ -1,9 +1,11 @@
-from src.Ciacle import Ciacle
-from src.Figure import Figure
 import math
+from src.Figure import Figure
 
 
 class Triangle(Figure):
+    area = 0
+    perimeter = 0
+    name = 'triangle'
 
     def __init__(self, a, b, c):
         self.a = a
@@ -13,17 +15,16 @@ class Triangle(Figure):
     @property
     def get_area(self):
         p = (self.a + self.b + self.c) / 2  # если имеем 3 переменные то считаем в противном случае вывести none
-        return math.sqrt((p * (p - self.a) * (p - self.b) * (p - self.c)))
+        self.area = math.sqrt((p * (p - self.a) * (p - self.b) * (p - self.c)))
+        return self.area
 
     @property
     def get_perimeter(self):
-        return self.a + self.b + self.c
+        self.perimeter = self.a + self.b + self.c
+        return self.perimeter
 
-    @property
-    def add_area(self, ciacle1):
-        ciacle1 = Ciacle(5)
-        return self.get_area(Triangle1) + ciacle1  # научить складывать с другой геометрической фигурой
-        # и Если передана не геометрическая фигура, то нужно выбрасывать ошибку (raise ValueError)
+    def add_area(self, figure):
+        self.area = self.area + figure.get_area()
+        return self.area  # научить складывать с другой геометрической фигурой и Если передана не
+        # геометрическая фигура, то нужно выбрасывать ошибку (raise ValueError)
 
-
-Triangle1 = Triangle(12, 13, 14)

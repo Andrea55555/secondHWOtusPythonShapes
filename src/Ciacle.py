@@ -1,27 +1,28 @@
-from src.Figure import Figure
 import math
+
+from src.Figure import Figure
 
 
 class Ciacle(Figure):
+    name = 'ciacle'
+    area = 0
+    perimeter = 0
 
     def __init__(self, r):
         self.r = r
 
     @property
     def get_area(self):
-        return math.pi * (self.r ** 2)
+        self.area = math.pi * (self.r ** 2)
+        return self.area
 
     @property
     def get_perimeter(self):
-        return 2 * 3.14 * self.r
+        self.perimeter = 2 * 3.14 * self.r
+        return self.perimeter
 
-    @property
-    def add_area(self):
-        pass
-
-
-Ciacle1 = Ciacle(12)
+    def add_area(self, figure):
+        self.area = self.area + figure.get_area()
+        return self.area
 
 
-print(Ciacle1.get_area)
-print(Ciacle1.get_perimeter)

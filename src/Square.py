@@ -1,25 +1,26 @@
 from src.Figure import Figure
+from src.Triangle import Triangle
 
 
 class Square(Figure):
+    area = 0
+    perimeter = 0
+    name = 'square'
 
     def __init__(self, a):
         self.a = a
 
     @property
     def get_area(self):
-        return self.a * 2
+        self.area = self.a * 2
+        return self.area
 
     @property
     def get_perimeter(self):
-        return self.a * 4
+        self.perimeter = self.a * 4
+        return self.perimeter
 
-    @property
-    def add_area(self):
-        pass
+    def add_area(self, figure):
+        self.area = self.area + figure.get_area()
+        return self.area
 
-
-Square1 = Square(12)
-
-print(Square1.get_area)
-print(Square1.get_perimeter)
