@@ -7,8 +7,13 @@ class Rectangle(Figure):
     name = 'rectangle'
 
     def __init__(self, a, b):
+        if a < 0:
+            raise AttributeError
+        if b < 0:
+            raise AttributeError
         self.a = a
         self.b = b
+
 
     @property
     def get_area(self):

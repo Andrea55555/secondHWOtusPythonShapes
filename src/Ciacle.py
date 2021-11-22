@@ -9,7 +9,10 @@ class Ciacle(Figure):
     perimeter = 0
 
     def __init__(self, r):
+        if r < 0:
+            raise AttributeError
         self.r = r
+
 
     @property
     def get_area(self):

@@ -1,5 +1,4 @@
 from src.Figure import Figure
-from src.Triangle import Triangle
 
 
 class Square(Figure):
@@ -8,6 +7,8 @@ class Square(Figure):
     name = 'square'
 
     def __init__(self, a):
+        if a < 0:
+            raise AttributeError
         self.a = a
 
     @property
